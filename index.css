@@ -1,0 +1,115 @@
+
+ body{
+     background-color: #2d3436;
+     font-family: 'Roboto Mono', monospace;
+ }
+ .js-clock{
+    position:absolute;
+    right:3%;
+    top:3%;
+ }
+ .js-title, .js-date{
+     text-align:center;
+     color:white;
+     font-style: italic;
+     font-size: 1rem;
+     font-weight: lighter;
+ }
+ h1{
+      color:white;
+  }
+  .clicked{
+      color:#7f8c8d;
+  }
+.js-toDoForm{
+    display: none;
+    margin-top:5%;
+}
+  input[type=text]{
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color:transparent;
+    font-size: 5vmin;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-color: #2d3436;
+    color: #ecf0f1;
+}
+.toDoIn:focus, .nameIn:focus {
+    animation-name: border-focus;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+  }
+@keyframes border-focus{
+    from{
+        border-color: #636e72;
+    }
+    to{
+        border-color: #dfe6e9;
+    }
+}
+input:focus::-webkit-input-placeholder{
+    color:transparent;
+}
+
+
+  input::placeholder{
+      color:#ecf0f1;
+      text-align: center;
+  }
+  .form, .grettings
+  {
+      display: none;
+  }
+
+  .showing{
+      display: block;
+      color:#ecf0f1;
+      font-size: 5vmin;
+      text-align: center;
+  }
+  .question{
+      color: #ecf0f1;
+      font-size: 5vmin;
+  }
+
+  @keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+  .bgImage{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      animation: fadeIn 0.5s linear;
+  }
+
+  .main{
+    position:absolute;
+    width:100%;
+    top:20%;
+    left: 50%;
+    margin-left: -50%;
+    text-align: center;
+}
+  .js-toDoList{
+    color: #ecf0f1;
+    font-size: 3vmin;
+}
+  .js-weather{
+    color: #ecf0f1;
+    position: absolute;
+    width: 100%;
+    bottom: 3%;
+    right: 3%;
+    text-align: end;
+  }
