@@ -2,7 +2,6 @@ const clockContainer = document.querySelector(".js-clock");
 const dateTitle = clockContainer.querySelector(".js-date");
 const clockTitle = clockContainer.querySelector(".js-title");
 
-
 function getTIme(){
     const date =  new Date();
     const year = date.getFullYear();;

@@ -1,7 +1,9 @@
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
     greeting = document.querySelector(".js-grettings"),
-    question = document.querySelector(".js-question");
+    question = document.querySelector(".js-question"),
+    reset = document.querySelector(".js-reset"),
+    reset_button = reset.querySelector("button");
 
     const toDo_Form = document.querySelector(".js-toDoForm");
 
@@ -33,9 +35,11 @@ function paintGreeting(text){
     if(text==="Mattias"){
         question.innerText = `You are My Sexy Husband, it's only for you`    
     }else{
-        question.innerText = `What is your main focus for today?`
+        question.innerText = `To infinity and beyond!🚀 `
     }
     toDo_Form.style.display = "block";
+    reset.style.display = "block";
+    reset_button.innerText = "strat again"
 }
 
 function loadName(){
@@ -47,9 +51,15 @@ function loadName(){
         paintGreeting(currentUser);
     }
 }
+function handleClick(event){
+    localStorage.removeItem(USER_LS);
+    localStorage.removeItem("toDos");
+    location.reload(true);
+}
 
 function init(){
     loadName();
+    reset_button.addEventListener("click", handleClick);
 }
 
 init();

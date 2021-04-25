@@ -3,16 +3,20 @@
      background-color: #2d3436;
      font-family: 'Roboto Mono', monospace;
  }
+ li{
+     list-style: none;
+ }
  .js-clock{
     position:absolute;
     right:3%;
     top:3%;
+    
  }
  .js-title, .js-date{
      text-align:center;
      color:white;
      font-style: italic;
-     font-size: 1rem;
+     font-size: 3.5vmin;
      font-weight: lighter;
  }
  h1{
@@ -83,6 +87,22 @@ input:focus::-webkit-input-placeholder{
         opacity: 1;
     }
 }
+  .js-reset{
+      padding-top: 2%;
+      display:block;
+  }
+
+  .js-reset button{
+      background: transparent;
+      border:none;
+      color: #ecf0f1;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 2.5vmin;
+      font-style: italic;
+  }
+  .js-reset button:focus{
+      outline: none;
+  }
   .bgImage{
       position: absolute;
       top: 0;
@@ -112,4 +132,5 @@ input:focus::-webkit-input-placeholder{
     bottom: 3%;
     right: 3%;
     text-align: end;
+    font-size: 3.5vmin;
   }

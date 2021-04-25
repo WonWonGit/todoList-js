@@ -2,11 +2,17 @@
 <html>
 <title>Something</title>
 <link rel="stylesheet" href="index.css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <meta charset="utf-8">
 <body>
+	<div class="js-reset">
+		<button></button>
+	</div>
 	<div class="js-clock">
+		<div class="clockSimple">
 		<div class="js-date">0000.00.00</div>
 		<div class="js-title">00:00</div>
+		</div>
 	</div>
 	<div class="main">
 	<form class="js-form form">
@@ -21,7 +27,8 @@
 		
 	</ul>
 	</div>
-	<span class="js-weather"></span>
+	<div class="js-weather">
+	</div>
 	<script src="clock.js"></script>
 	<script src="grettings.js"></script>
 	<script src="todo.js"></script>
