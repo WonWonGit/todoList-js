@@ -4,16 +4,27 @@ const weather = document.querySelector(".js-weather");
 const weather_icon = document.querySelector("i");
 
 function getWeather(lat, lon){
-    let weatherIcon = { 
-        '01' : '☀️☀️', 
-        '02' : '⛅️⛅', 
-        '03' : '☁️☁️', 
-        '04' : '☁️🌫', 
-        '09' : '☔️☔️', 
-        '10' : '🌧🌧', 
-        '11' : '🌩🌩', 
-        '13' : '❄️☃️', 
-        '50' : '🌫🌫' };
+    const date =  new Date();
+    const get_hours = date.getHours();
+    var weatherIcon = {eveing : { 
+        '01' : 'fas fa-sun', 
+        '02' : 'fas fa-cloud-sun', 
+        '03' : 'fas fa-cloud', 
+        '04' : 'fas fa-cloud-sun', 
+        '09' : 'fas fa-cloud-sun-rain', 
+        '10' : 'fas fa-cloud-showers-heavy', 
+        '11' : 'fas fa-poo-storm', 
+        '13' : 'fas fa-snow-flake', 
+        '50' : 'fas fa-water' },
+        dinner : {'01' : 'fas fa-moon', 
+        '02' : 'fas fa-cloud-moon', 
+        '03' : 'fas fa-cloud', 
+        '04' : 'fas fa-cloud-moon', 
+        '09' : 'fas fa-cloud-moon-rain', 
+        '10' : 'fas fa-cloud-showers-heavy', 
+        '11' : 'fas fa-poo-storm', 
+        '13' : 'fas fa-snow-flake', 
+        '50' : 'fas fa-water'}};
     fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     ).then(
@@ -24,8 +35,15 @@ function getWeather(lat, lon){
         const temperature = json.main.temp;
         const place = json.name;
         const condition = json.weather["0"].main;
-        const icon = weatherIcon[(json.weather["0"].icon).substr(0,2)];
-        weather.innerText = `${icon} ${condition} ${temperature}℃ ${place}`;
+        var icon;
+        const jsonIcon = (json.weather["0"].icon).substr(0,2);
+        if(get_hours>=18){
+             icon = weatherIcon["dinner"][jsonIcon];
+        }else{
+             icon = weatherIcon["evening"][jsonIcon];
+        }
+        weather_icon.className += icon;
+        weather.innerText = `${condition} ${temperature}℃ ${place}`;
     });
 }
 

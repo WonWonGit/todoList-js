@@ -12,6 +12,10 @@
     top:3%;
     
  }
+ .i{
+     font-size: 4vmin;
+     padding-right: 5px;
+ }
  .js-title, .js-date{
      text-align:center;
      color:white;
@@ -125,12 +129,16 @@ input:focus::-webkit-input-placeholder{
     color: #ecf0f1;
     font-size: 3vmin;
 }
-  .js-weather{
-    color: #ecf0f1;
+  .weather{
     position: absolute;
-    width: 100%;
     bottom: 3%;
-    right: 3%;
-    text-align: end;
+    right: 2%;
+  }
+  .js-weather{
     font-size: 3.5vmin;
+  }
+  .weather_item{
+    float: left;
+    vertical-align: top;
+    color: #ecf0f1;
   }
