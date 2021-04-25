@@ -6,7 +6,7 @@ const weather_icon = document.querySelector("i");
 function getWeather(lat, lon){
     const date =  new Date();
     const get_hours = date.getHours();
-    var weatherIcon = {eveing : { 
+    var weatherIcon = {evening : { 
         '01' : 'fas fa-sun', 
         '02' : 'fas fa-cloud-sun', 
         '03' : 'fas fa-cloud', 
